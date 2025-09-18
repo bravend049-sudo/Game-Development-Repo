@@ -7,7 +7,7 @@ public class ScoreManagerScript : MonoBehaviour
 {
 
     public int score;
-    public TextMeshProGUI scoreText;
+    //public TextMeshProGUI scoreText;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -29,6 +29,6 @@ public class ScoreManagerScript : MonoBehaviour
 
     public void UpdateScoreText()
     {
-        scoreText.Text = "Score: " + score;
+        //scoreText.Text = "Score: " + score;
     }
 }

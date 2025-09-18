@@ -10,25 +10,25 @@ public class BalloonScript : MonoBehaviour
 
     public int scoreToGive;
 
-    private ScoreManager scoreManager;
+    //public ScoreManager scoreManager;
 
     public GameObject popEffect;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        scoreManager = GameObject.Find("ScoreManager");
-        GetComponent<scoreManager>();
+        //scoreManager = GameObject.Find("ScoreManager");
+        //GetComponent<ScoreManager>();
     }
 
     void OnMouseDown()
     {
         clickToPop -= 1;
-        transform.localScale += Vecoter3.one + scaleToIncrease;
+        transform.localScale += Vector3.one + scaleToIncrease;
 
         if (clickToPop == 0)
         {
-            scoreManager.IncreaseScoreText(scoreToGive);
+            //scoreManager.IncreaseScoreText(scoreToGive);
             Instantiate(popEffect, transform.position, transform.rotation);
             Destroy(gameObject);
         }
