@@ -1,32 +1,30 @@
 using UnityEngine;
 
-public class BallonScript : MonoBehaviour
+public class Balloon : MonoBehaviour
 {
     public int clickToPop = 3;
     public float scaleToIncrease = 0.10f;
     public int scoreToGive;
-
-    public float upperBound = 15.0f;
-
-    public ScoreManager scoreManager;
+    
+    public ScoreManagerScript scoreManager;
 
     public GameObject popEffect;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        scoreManager = GameObject.Find("ScoreManager").GetComponent<ScoreManager>();
-        GetComponent<ScoreManager>();
+        GetComponent<ScoreManagerScript>();
     }
 
     void OnMouseDown()
     {
         clickToPop -= 1;
-        transform.localScale += Vector3.one + scaleToIncrease;
+        transform.localScale += Vector3.one * scaleToIncrease;
 
         if (clickToPop == 0)
         {
             scoreManager.IncreaseScoreText(scoreToGive);
+            Instantiate(popEffect, transform.position, transform.rotation);
             Destroy(gameObject);
         }
     }

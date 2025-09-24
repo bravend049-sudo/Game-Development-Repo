@@ -16,10 +16,10 @@ public class SpawnManager : MonoBehaviour
         InvokeRepeating("SpawnRandomBalloon", startDelay, spawnInterval);
     }
 
-    void SpawnRandomBaloon()
+    void SpawnRandomBalloon()
     {
         Vector3 spawnPos = new Vector3(Random.Range(-xRange, xRange), 0, 0);
         int balloonIndex = Random.Range(0, balloonPrefabs.Length);
-        Instantiate(balloonPrefabs[balloonIndex], spawnPos, balloonPrefabs[balloonIndex.transform.rotation]);
+        Instantiate(balloonPrefabs[balloonIndex], spawnPos, balloonPrefabs[balloonIndex].transform.rotation);
     }
 }

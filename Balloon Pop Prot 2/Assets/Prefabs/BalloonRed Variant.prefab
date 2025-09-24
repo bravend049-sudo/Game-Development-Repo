@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BalloonRed Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 3974059738112411838, guid: 2d5980dea50aaac49aa4b4bdab151f2b, type: 3}
+      propertyPath: popEffect
+      value: 
+      objectReference: {fileID: 3116007029511356158, guid: 54857c4debfcf87449a7f8d63af1941d, type: 3}
     - target: {fileID: 5355368756909836763, guid: 2d5980dea50aaac49aa4b4bdab151f2b, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
