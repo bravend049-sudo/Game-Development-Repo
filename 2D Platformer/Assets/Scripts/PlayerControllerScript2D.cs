@@ -12,10 +12,10 @@ public class PlayerControllerScript2D : MonoBehaviour
     public float jumpForce;
     public bool isGrounded;
     public int bottomBound = -4;
+    public Rigidbody2D rig;
+    public SpriteRenderer sr;
     [Header("Score")]
     public int score;
-
-    public Rigidbody2D rig;
     public TextMeshProUGUI scoreText;
 
     public void AddScore(int amount)
@@ -28,6 +28,15 @@ public class PlayerControllerScript2D : MonoBehaviour
     {
         float moveInput = Input.GetAxisRaw("Horizontal");
         rig.linearVelocity = new Vector2(moveInput * moveSpeed, rig.linearVelocity.y);
+
+    if(rig.linearVelocity.x > 0)
+        {
+            sr.flipX = false;
+        }
+    else if(rig.linearVelocity.x < 0)
+        {
+            sr.flipX = true;
+        }
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -35,6 +44,7 @@ public class PlayerControllerScript2D : MonoBehaviour
     {
 
     }
+    
 
     // Update is called once per frame
     void Update()
@@ -51,7 +61,7 @@ public class PlayerControllerScript2D : MonoBehaviour
         }
     }
 
-    void OnCollision2D(Collision2D collision)
+    void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.GetContact(0).normal == Vector2.up)
         {
