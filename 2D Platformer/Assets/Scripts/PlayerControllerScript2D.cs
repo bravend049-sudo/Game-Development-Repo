@@ -29,14 +29,14 @@ public class PlayerControllerScript2D : MonoBehaviour
         float moveInput = Input.GetAxisRaw("Horizontal");
         rig.linearVelocity = new Vector2(moveInput * moveSpeed, rig.linearVelocity.y);
 
-    if(rig.linearVelocity.x > 0)
-        {
-            sr.flipX = false;
-        }
-    else if(rig.linearVelocity.x < 0)
-        {
-            sr.flipX = true;
-        }
+    //if(rig.linearVelocity.x > 0)
+        //{
+            //sr.flipX = false;
+        //}
+    //else if(rig.linearVelocity.x < 0)
+        //{
+            //sr.flipX = true;
+        //}
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -57,7 +57,7 @@ public class PlayerControllerScript2D : MonoBehaviour
 
         if (transform.position.y < bottomBound)
         {
-            GameOver();
+            //GameOver();
         }
     }
 
