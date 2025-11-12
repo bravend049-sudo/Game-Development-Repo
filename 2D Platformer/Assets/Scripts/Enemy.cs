@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    public SpriteRenderer sr;
+    public bool isFacingLeft;
     public float moveSpeed;
     public Vector3 moveOffset;
     private Vector3 startPos;
@@ -27,10 +29,20 @@ public class Enemy : MonoBehaviour
             if (targetPos == startPos)
             {
                 targetPos = startPos + moveOffset;
+                isFacingLeft = true;
             }
             else
             {
                 targetPos = startPos;
+                isFacingLeft = false;
+            }
+            if(isFacingLeft == true)
+            {
+                sr.flipX = false;
+            }
+            else if(isFacingLeft == false)
+            {
+                sr.flipX = true;
             }
         }
     }

@@ -11,7 +11,7 @@ public class PlayerControllerScript2D : MonoBehaviour
     public float moveSpeed;
     public float jumpForce;
     public bool isGrounded;
-    public int bottomBound = -4;
+    public int bottomBound = -20;
     public Rigidbody2D rig;
     public SpriteRenderer sr;
     [Header("Score")]
@@ -55,15 +55,15 @@ public class PlayerControllerScript2D : MonoBehaviour
             rig.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
         }
 
-        if (transform.position.y < bottomBound)
+        if (transform.position.y < -20)
         {
-            //GameOver();
+            GameOver();
         }
     }
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.GetContact(0).normal == Vector2.up)
+        if (Vector2.Dot(collision.GetContact(0).normal, Vector2.up) > 0.8f)
         {
             isGrounded = true;
         }

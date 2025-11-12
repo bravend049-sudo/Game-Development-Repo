@@ -110,8 +110,8 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 8
-        width: 11
+        y: 10
+        width: 10
         height: 19
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -131,8 +131,8 @@ TextureImporter:
       name: SkeletonPlayer_1
       rect:
         serializedVersion: 2
-        x: 2
-        y: 2
+        x: 1
+        y: 4
         width: 8
         height: 7
       alignment: 0
@@ -153,9 +153,9 @@ TextureImporter:
       name: SkeletonPlayer_2
       rect:
         serializedVersion: 2
-        x: 9
-        y: 8
-        width: 7
+        x: 8
+        y: 10
+        width: 8
         height: 7
       alignment: 0
       pivot: {x: 0, y: 0}
